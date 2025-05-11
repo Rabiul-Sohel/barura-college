@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 :root {
   --background: #ffffff;
@@ -23,4 +24,85 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+@keyframes zoomIn {
+  0%{
+    transform: scale(1);
+
+  }
+  100% {
+    transform: scale(1.1)
+  }
+}
+@keyframes scrollX {
+  0%{
+    transform: translateX(0%);
+
+  }
+  100% {
+    
+    transform: translateX(-100%);
+  }
+}
+@keyframes moveDown {
+  0%{
+    transform: tranlateY(0)
+  }
+  100%{
+    transform: trnslateY(5px)
+  }
+}
+@keyframes stretchDown {
+  0%{
+    transform:scaleY(0)
+  }
+  100%{
+    transform: scaleY(1)
+  }
+}
+@keyframes onOff {
+  0%{
+    box-shadow:0 0 0 0 rgba(255, 255, 255, 1);
+    
+    
+  }
+  100%{
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);;
+    
+    
+  }
+}
+
+.animate-play{
+  animation: onOff 2s ease-in-out 5s infinite forwards;
+ 
+}
+.animate-down{
+  animation: moveDown 2s ease-in-out forwards;
+}
+.pause-animation:hover{
+  
+  animation-play-state: paused;
+}
+.scrollX-animation{
+  animation: scrollX 25s linear infinite ;
+}
+.zoom-animation{
+  animation: zoomIn 4s ease-in-out forwards;
+}
+.stretchDown-animation{
+  animation: stretchDown 4s ease-in-out forwards;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next{
+  
+ display: none; 
+  
+}
+@theme {
+  --color-main: #3317F5
 }
