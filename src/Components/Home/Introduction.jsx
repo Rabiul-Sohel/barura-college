@@ -7,6 +7,7 @@ import { useInView } from "react-intersection-observer";
 import { CgPlayButtonO } from "react-icons/cg";
 import { GoPlay } from "react-icons/go";
 import Services from "@/Components/Home/Serveces";
+import RoundButton from "@/Components/Buttons/RoundButton"
 
 const Introduction = () => {
   const { ref, inView } = useInView({
@@ -15,11 +16,11 @@ const Introduction = () => {
   });
 
   return (
-    <div className="py-8 bg-gray-200 space-y-5 relative">
-      <div className=" min-h-[80vh]   overflow-hidden flex items-center py-8 bg-gray-200">
+    <div className="pt-4 lg:pt-8 bg-gray-200 space-y-5 relative">
+      <div className=" min-h-[80vh]   overflow-hidden flex items-center py-4 lg:py-8 bg-gray-200">
         <div
           ref={ref}
-          className="container mx-5 grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-5 w-full h-full pb-10  lg:mx-auto text-black "
+          className="container mx-5 grid grid-cols-1 lg:grid-cols-7 justify-center items-center gap-5 w-full h-full pb-10  lg:mx-auto text-black "
         >
           <motion.div
             style={{
@@ -31,7 +32,7 @@ const Introduction = () => {
             initial={{ opacity: 0, x: -100 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
-            className={`h-full min-h-[80vh] group relative flex  justify-center items-center  shadow-[6px_8px_6px_2px_rgba(0,0,0,0.5)]`}
+            className={`h-full min-h-[70vh] group col-span-3 relative flex  justify-center items-center  shadow-[6px_8px_6px_2px_rgba(0,0,0,0.5)]`}
           >
             {/* <Image
             className="w-full  h-full"
@@ -47,9 +48,9 @@ const Introduction = () => {
             initial={{ opacity: 0, x: 100 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
             transition={{ duration: 1 }}
-            className="h-full p-12 shadow-[8px_8px_6px_2px_rgba(0,0,0,0.5)] space-y-4 bg-white"
+            className="h-[70vh] p-5 lg:p-12 shadow-[8px_8px_6px_2px_rgba(0,0,0,0.5)] col-span-4 space-y-4 bg-white"
           >
-            <h1 className="text-2xl font-bold text-main">
+            <h1 className="text-xl lg:text-2xl font-bold text-main">
               Welcome to Barura Shahid Smriti Govt. College
             </h1>
             <div>
@@ -68,10 +69,7 @@ const Introduction = () => {
                 Chakravarty was appointed its first principal. The college was
                 affiliated with Calcutta University....
               </p>
-              <button className="lg:py-1 text-sm lg:text-base mt-2 rounded-base px-3 py-0  border cursor-pointer border-main hover:bg-main rounded-full  duration-500 transition hover:text-white">
-                {" "}
-                <span className="text-xl font-semibold">+</span> Read More
-              </button>
+              <RoundButton name="Read More"/>
             </div>
           </motion.div>
         </div>

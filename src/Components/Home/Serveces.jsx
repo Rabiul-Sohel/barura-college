@@ -108,7 +108,7 @@ const Serveces = () => {
     // skip: true
   });
   return (
-    <div className=" relative px-5 lg:px-0 flex items-center relative py-10 ">
+    <div className=" relative px-5 lg:px-0 flex items-center relative pb-5 lg:pb-12 ">
       <motion.div
         className="container  mx-auto  relative"
         ref={ref}
